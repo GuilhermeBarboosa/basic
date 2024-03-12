@@ -1,0 +1,113 @@
+<app-navbar></app-navbar>
+<div class="dv-line dv-border-bottom">
+  <div class="dv-column">
+    <div class="dv-center">
+      <div class="dv-line">
+        <div class="dv-column">
+          <div class="dv-padding-hdpi">
+            <p class="dv-gray flex">
+              <img
+                class="flex dv-vertical-align-middle dv-margin-right-ldpi"
+                src="../../../../assets/icon/blue-home.svg"
+                width="16"
+              /><span
+                routerLink="/inicio"
+                routerLinkActive="active"
+                class="dv-underline dv-blue dv-cursor"
+                >Início</span
+              >
+              / Minhas inscrições
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dv-line">
+  <div class="dv-column">
+    <div class="dv-center">
+      <div class="dv-line">
+        <div class="dv-column">
+          <div class="dv-padding-mdpi">
+            <div class="dv-line">
+              <div class="dv-column">
+                <div class="dv-padding-mdpi">
+                  <div class="dv-line">
+                    <div class="dv-column dv-border dv-radius">
+                      <div class="dv-padding-hdpi">
+                        <div class="dv-line">
+                          <div class="dv-column" *ngIf="this.inscricao">
+                            <p class="dv-bold">
+                              {{ inscricao.edital }} - Inscrição:
+                              {{ inscricao.id }}
+                            </p>
+
+                            <p class="flex">
+                              <img
+                                class="dv-vertical-align-middle dv-margin-right-ldpi"
+                                src="../../../../assets/icon/gray-info.svg"
+                                width="16"
+                              />Função: {{ inscricao.funcao }}
+                            </p>
+                            <p class="flex">
+                              <img
+                                class="dv-vertical-align-middle dv-margin-right-ldpi"
+                                src="../../../../assets/icon/gray-info.svg"
+                                width="16"
+                              />Situação: {{ inscricao.situacao }}
+                            </p>
+                            <p class="flex">
+                              <img
+                                class="dv-vertical-align-middle dv-margin-right-ldpi"
+                                src="../../../../assets/icon/gray-info.svg"
+                                width="16"
+                              />Pontuação: {{ inscricao.pontuacao }}
+                            </p>
+
+                            <p class="flex mt-4 dv-bold">Questionário:</p>
+
+                            <div
+                              class="dv-line"
+                              *ngFor="let p of this.inscricao.inscricaoResposta"
+                            >
+                              <div class="dv-column mb-2">
+                                <p class="">{{ p.pergunta }}</p>
+                                <p class="ml-3">- {{ p.alternativa }}</p>
+                              </div>
+                            </div>
+
+                            <p class="flex mt-4 dv-bold">Arquivos:</p>
+
+                            <div>
+                              <div
+                                class="dv-line"
+                                *ngFor="let a of this.arquivo"
+                              >
+                                <div class="dv-column mb-2 flex">
+                                  <!-- <img src="../../../../assets/icon/blue-download.svg" alt="" class="m-2" width="1.5%"> -->
+                                  <a
+                                    (click)="downloadDoc(a)"
+                                    class="text-lg text-blue-600 dark:text-blue-500 underline cursor-pointer"
+                                    >{{ a.caminho_arquivo }}</a
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+</div>

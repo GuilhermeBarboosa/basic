@@ -1,0 +1,30 @@
+<!-- [ngStyle]="{
+  'background-color': styleService.colorVariables['bg_primary_color']
+}" -->
+
+<div
+
+  class="full-width navbar"
+>
+  <div *ngIf="value == 'CMS'">
+    <div class="flex items-center justify-between">
+      <div>
+        <img class="m-5" src="../../../assets/logopmu.png" alt="" width="45%" />
+      </div>
+
+      <div class="p-5 flex items-center justify-center">
+        <p
+          class="m-5 flex items-center text-white justify-center text-sm"
+        >
+          Bem vindo(a), {{ nameUser }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="value != 'CMS'">
+    <div class="max-w-2xl flex items-center justify-center">
+      <img src="../../../assets/logopmu.png" alt="" width="35%" />
+    </div>
+  </div>
+</div>

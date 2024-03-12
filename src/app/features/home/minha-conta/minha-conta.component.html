@@ -1,0 +1,435 @@
+<app-navbar></app-navbar>
+
+<div>
+  <div class="dv-line dv-border-bottom">
+    <div class="dv-column">
+      <div class="dv-center">
+        <div class="dv-line">
+          <div class="dv-column">
+            <div class="dv-padding-hdpi">
+              <p class="dv-gray flex">
+                <img
+                  class="dv-vertical-align-middle dv-margin-right-ldpi"
+                  src="../../../../assets/icon/blue-home.svg"
+                  width="16"
+                /><a
+                  routerLink="/inicio"
+                  routerLinkActive="active"
+                  class="dv-underline dv-blue dv-cursor"
+                  >Início</a
+                >
+                / Minha conta
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dv-line">
+    <div class="dv-column">
+      <div class="dv-center">
+        <div class="dv-line">
+          <div class="dv-column">
+            <div class="dv-padding-mdpi">
+              <form [formGroup]="formulario" *ngIf="formulario">
+                <div class="dv-line">
+                  <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">Nome completo</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100"
+                        type="text"
+                        id="usuario"
+                        formControlName="name"
+                        autocomplete="off"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('name')?.errors?.['required'] && formulario.get('name')?.touched"
+                      >
+                        Nome é obrigatório
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dv-line">
+                  <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">CPF</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-cpf dv-required"
+                        type="text"
+                        id="cpf"
+                        formControlName="cpf"
+                        autocomplete="off"
+                        placeholder="___.___.___-__"
+                        mask="000.000.000-00"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('cpf')?.errors?.['required'] && formulario.get('cpf')?.touched"
+                      >
+                        Cpf é obrigatório
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">RG</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-required"
+                        type="text"
+                        id="rg"
+                        name="rg"
+                        autocomplete="off"
+                      />
+                    </div>
+                  </div> -->
+
+                  <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">Data de nascimento</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-date dv-required"
+                        type="text"
+                        id="data_de_nascimento"
+                        formControlName="data_de_nascimento"
+                        placeholder="00/00/0000"
+                        autocomplete="off"
+                        mask="00/00/0000"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('data_de_nascimento')?.errors?.['required'] && formulario.get('data_de_nascimento')?.touched"
+                      >
+                        Data de nascimento é obrigatório
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dv-line">
+                  <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">E-mail</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-required"
+                        type="text"
+                        id="email"
+                        formControlName="email"
+                        autocomplete="off"
+                        value=""
+                      />
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('email')?.errors?.['required'] && formulario.get('email')?.touched"
+                      >
+                        Email é obrigatório e deve ser válido
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">Celular</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-cellphone dv-required"
+                        type="text"
+                        id="telefone"
+                        formControlName="telefone"
+                        autocomplete="off"
+                        placeholder="__ _____-____"
+                        mask="00 00000-0000"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('telefone')?.errors?.['required'] && formulario.get('telefone')?.touched"
+                      >
+                        Telefone é obrigatório
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dv-line">
+                  <div class="dv-column-four">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">CEP</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-cep dv-required"
+                        type="text"
+                        id="cep"
+                        autocomplete="off"
+                        formControlName="cep"
+                        placeholder="_____-___"
+                        mask="00000-000"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('cep')?.errors?.['required'] && formulario.get('cep')?.touched"
+                      >
+                        Cep é obrigatório
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dv-line">
+                  <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">Logradouro</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-required"
+                        type="text"
+                        id="rua"
+                        formControlName="rua"
+                        autocomplete="off"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('rua')?.errors?.['required'] && formulario.get('rua')?.touched"
+                      >
+                        Logradouro é obrigatório
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dv-column-four">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">Número</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-integer dv-required"
+                        type="text"
+                        id="numero"
+                        formControlName="numero"
+                        autocomplete="off"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('numero')?.errors?.['required'] && formulario.get('numero')?.touched"
+                      >
+                        Número é obrigatório
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dv-column-four">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">Complemento</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100"
+                        type="text"
+                        id="complemento"
+                        formControlName="complemento"
+                        autocomplete="off"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dv-line">
+                  <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">Bairro</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-required"
+                        type="text"
+                        id="bairro"
+                        formControlName="bairro"
+                        autocomplete="off"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('bairro')?.errors?.['required'] && formulario.get('bairro')?.touched"
+                      >
+                        Bairro é obrigatório
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">Cidade</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-required"
+                        type="text"
+                        id="cidade"
+                        formControlName="cidade"
+                        autocomplete="off"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('cidade')?.errors?.['required'] && formulario.get('cidade')?.touched"
+                      >
+                        Cidade é obrigatório
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dv-column">
+                    <div class="dv-padding-mdpi">
+                      <p class="dv-margin-bottom-ldpi">Estado</p>
+
+                      <input
+                        class="dv-padding-mdpi dv-radius bg-gray-100 dv-required"
+                        type="text"
+                        id="estado"
+                        formControlName="estado"
+                        autocomplete="off"
+                      />
+
+                      <div
+                        class="mensagem__erro"
+                        *ngIf="formulario.get('estado')?.errors?.['required'] && formulario.get('estado')?.touched"
+                      >
+                        Estado é obrigatório
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div *ngIf="this.years < 18">
+                  <div class="dv-line">
+                    <div class="dv-column">
+                      <div class="dv-padding-mdpi">
+                        <p
+                          class="flex dv-padding-hdpi dv-blue-border-left dv-blue-light-bg dv-radius dv-blue"
+                        >
+                          <img
+                            class="dv-vertical-align-middle dv-margin-right-ldpi"
+                            src="../../../../assets/icon/blue-info.svg"
+                            width="16"
+                          />Atenção! Caso você tenha menos de 18 anos, informe
+                          os dados do seu responsável legal.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dv-line">
+                    <div class="dv-column">
+                      <div class="dv-padding-mdpi">
+                        <p class="dv-margin-bottom-ldpi">
+                          Nome completo do responsável
+                        </p>
+
+                        <input
+                          class="dv-padding-mdpi dv-radius bg-gray-100"
+                          type="text"
+                          id="nome_responsavel"
+                          formControlName="nome_responsavel"
+                          autocomplete="off"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dv-line">
+                    <div class="dv-column">
+                      <div class="dv-padding-mdpi">
+                        <p class="dv-margin-bottom-ldpi">
+                          E-mail do responsável
+                        </p>
+
+                        <input
+                          class="dv-padding-mdpi dv-radius bg-gray-100"
+                          type="text"
+                          id="email_responsavel"
+                          formControlName="email_responsavel"
+                          autocomplete="off"
+                          value=""
+                        />
+                      </div>
+                    </div>
+
+                    <div class="dv-column">
+                      <div class="dv-padding-mdpi">
+                        <p class="dv-margin-bottom-ldpi">
+                          Celular do responsável
+                        </p>
+
+                        <input
+                          class="dv-padding-mdpi dv-radius bg-gray-100 dv-cellphone"
+                          type="text"
+                          id="celular_responsavel"
+                          formControlName="celular_responsavel"
+                          autocomplete="off"
+                          value=""
+                          mask="00 00000-0000"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dv-line">
+                  <div class="dv-column dv-horizontal-align-right">
+                    <div class="dv-padding-mdpi flex">
+                      <button
+                        (click)="updateUser()"
+                        class="flex items-center dv-padding-mdpi dv-text-align-center dv-radius dv-blue-border dv-blue-bg dv-white dv-underline dv-cursor"
+                      >
+                        <img
+                          class="dv-vertical-align-middle dv-margin-right-ldpi"
+                          src="../../../../assets/icon/white-check.svg"
+                          width="16"
+                        />Salvar o registro
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!--
+                  <div class="dv-line">
+
+                    <div class="dv-column dv-text-align-right">
+
+                      <div class="dv-padding-mdpi">
+
+                        <a href="/processoseletivo/inicio">
+
+                          <p class="dv-display-inline dv-cursor dv-underline dv-red"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="../../../../assets/icon/red-close.svg" width="16">Cancelar a operação</p>
+
+                        </a>
+
+                      </div>
+
+                    </div>
+
+                  </div> -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

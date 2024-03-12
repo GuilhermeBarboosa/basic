@@ -1,0 +1,127 @@
+<!-- <div class="grid grid-cols-4 gap-4 m-2">
+  <div class="text-center" *ngFor="let ed of editalArray">
+    <div class="dv-padding-ldpi">
+      <div class=" p-6 bg-gray-200 card shadow">
+
+          <h5
+            class="mb-2 text-black text-2xl font-bold tracking-tight text-gray-900 font-color-blue"
+          >
+            {{ ed.edital }}
+          </h5>
+
+        <div class="p-2">
+          <div class="flex items-center justify-center">
+            <i class="bx bxs-calendar"></i>
+            <p class="font-normal block text-black">
+              {{ ed.data_inicio }} até {{ ed.data_fim }}
+            </p>
+          </div>
+
+          <div class="flex items-center justify-center">
+            <i class="bx bxs-user"></i>
+            <p class="font-normal block text-black">{{ ed.qtd_vagas }} vagas</p>
+          </div>
+        </div>
+
+        <div >
+          <a href="#" class="flex items-center justify-center">
+            <i class="bx bxs-download"></i>
+            <p class="underline font-normal p-1 text-blue-500">Edital</p>
+          </a>
+        </div>
+        <a (click)="getFuncao(ed.id)" class="cursor-pointer">
+          <p class="mb-2 font-bold text-xl block font-color-blue">
+            Inscreva-se
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<app-navbar></app-navbar>
+
+<div class="dv-line dv-border-bottom">
+  <div class="dv-column">
+    <div class="dv-center">
+      <div class="dv-line">
+        <div class="dv-column">
+          <div class="dv-padding-hdpi">
+            <p class="dv-gray flex">
+              <img
+                class="flex dv-vertical-align-middle dv-margin-right-ldpi"
+                src="../../../../assets/icon/blue-home.svg"
+                width="16"
+              /><span
+                routerLink="/inicio"
+                routerLinkActive="active"
+                class="dv-underline dv-blue dv-cursor"
+                >Início</span
+              >
+              / Editais abertos
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dv-center dv-padding-bottom-hdpi">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+    <div
+      class="col dv-padding-top-hdpi dv-padding-right-mdpi dv-padding-left-mdpi"
+      *ngFor="let ed of this.editalArray"
+    >
+      <div class="p-6 card shadow">
+        <h5
+          class="mb-2 text-black text-2xl font-bold tracking-tight text-gray-900 font-color-blue flex items-center justify-center"
+        >
+          {{ ed.edital }}
+        </h5>
+
+        <div class="p-2">
+          <div class="flex items-center justify-center">
+            <i class="bx bxs-calendar"></i>
+            <p class="font-normal block text-black">
+              {{ ed.data_inicio }} até {{ ed.data_fim }}
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <a
+            (click)="downloadEdital(ed.id)"
+            class="flex items-center justify-center cursor-pointer"
+          >
+            <img
+              src="../../../../assets/icon/blue-download.svg"
+              width="16"
+              alt=""
+              class="flex dv-vertical-align-middle dv-margin-right-ldpi"
+            />
+            <p class="dv-display-inline dv-underline dv-blue">Baixar edital</p>
+          </a>
+        </div>
+
+        <a
+          (click)="getFuncao(ed.id)"
+          class="cursor-pointer flex items-center justify-center"
+        >
+          <img
+            src="../../../../assets/icon/blue-check.svg"
+            width="16"
+            alt=""
+            class="flex dv-vertical-align-middle dv-margin-right-ldpi"
+          />
+          <p class="dv-display-inline dv-underline dv-blue dv-cursor">
+            Realizar minha inscrição
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

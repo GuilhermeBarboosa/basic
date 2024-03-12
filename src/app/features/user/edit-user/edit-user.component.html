@@ -1,0 +1,181 @@
+<app-navbar-login [value]="tipoPagina"></app-navbar-login>
+
+<div class="flex">
+  <app-sidebar></app-sidebar>
+
+  <div class="home-section">
+    <form class="m-5" [formGroup]="formulario" *ngIf="formulario">
+      <div class="flex justify-between">
+        <p class="text-black font-medium justify-start text-lg font-bold">
+          EDITAR USUÁRIO
+        </p>
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="id">Código</label>
+        <input
+          formControlName="id"
+          class="default-input p-2.5 text-center"
+          type="text"
+          id="id"
+          required
+        />
+      </div>
+
+      <form class="h-full" [formGroup]="formulario" *ngIf="formulario">
+        <div>
+          <div class="">
+            <div class="col-span-3">
+              <label class="block text-sm" for="name">Nome</label>
+              <input
+                formControlName="name"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="name"
+                aria-label="name"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="col">
+              <label class="block text-sm" for="email">E-mail</label>
+              <input
+                formControlName="email"
+                class="default-input w-full p-2.5"
+                type="email"
+                id="email"
+                aria-label="email"
+                required
+              />
+            </div>
+
+            <div class="col">
+              <label class="block text-sm" for="password">Senha</label>
+              <input
+                formControlName="password"
+                class="default-input w-full p-2.5"
+                type="password"
+                id="password"
+                aria-label="password"
+              />
+            </div>
+
+            <div class="">
+              <label class="block text-sm" for="cpf">Cpf</label>
+              <input
+                formControlName="cpf"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="cpf"
+                aria-label="cpf"
+                mask="000.000.000-00"
+              />
+            </div>
+
+            <div class="">
+              <label class="block text-sm" for="telefone">Telefone</label>
+              <input
+                formControlName="telefone"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="telefone"
+                aria-label="telefone"
+                mask="00 00000-0000"
+              />
+            </div>
+
+            <div class="">
+              <label class="block text-sm" for="data_de_nascimento">Data de nascimento</label>
+              <input
+                formControlName="data_de_nascimento"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="data_de_nascimento"
+                aria-label="data_de_nascimento"
+                mask="00/00/0000"
+              />
+            </div>
+
+            <div class="">
+              <label class="block text-sm" for="rua">Rua</label>
+              <input
+                formControlName="rua"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="rua"
+                aria-label="rua"
+                required
+              />
+            </div>
+
+            <div class="">
+              <label class="block text-sm" for="cep">Cep</label>
+              <input
+                formControlName="cep"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="cep"
+                aria-label="cep"
+                mask="00000-000"
+              />
+            </div>
+
+
+            <div class="">
+              <label class="block text-sm" for="bairro">Bairro</label>
+              <input
+                formControlName="bairro"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="bairro"
+                aria-label="bairro"
+                required
+              />
+            </div>
+
+
+            <div class="">
+              <label class="block text-sm" for="cidade">Cidade</label>
+              <input
+                formControlName="cidade"
+                class="default-input w-full p-2.5"
+                type="text"
+                id="cidade"
+                aria-label="cidade"
+                required
+              />
+            </div>
+
+            <div class="col">
+              <label class="block text-sm" for="first_name">Permissão</label>
+              <select
+                id="posicao"
+                formControlName="role"
+                class="default-input w-full p-2.5"
+              >
+                <option value="" disabled selected>
+                  Selecione a permissão
+                </option>
+                <option *ngFor="let role of roles" [value]="role.id">
+                  {{ role.role }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="items-center flex justify-between my-2">
+        <div class="align-end">
+          <app-button-red [value]="Nao" (click)="return()"></app-button-red>
+        </div>
+
+        <div>
+          <app-button-green [value]="Sim" (click)="edit()"></app-button-green>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

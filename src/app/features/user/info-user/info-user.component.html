@@ -1,0 +1,246 @@
+<app-navbar-login [value]="tipoPagina"></app-navbar-login>
+
+<div class="flex">
+  <app-sidebar></app-sidebar>
+
+  <div class="home-section">
+    <form class="m-5" [formGroup]="formulario" *ngIf="formulario">
+      <div class="flex justify-between">
+        <p class="text-black font-medium justify-start text-lg font-bold">
+          INFO DO USUÁRIO
+        </p>
+      </div>
+
+      <div class="">
+        <label class="block text-sm input-cod" for="nome">Código</label>
+        <input
+          formControlName="id"
+          class="default-input text-center p-2.5"
+          type="text"
+          id="name"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="name">Nome</label>
+        <input
+          formControlName="name"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="name"
+          aria-label="name"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="email">E-mail</label>
+        <input
+          formControlName="email"
+          class="default-input w-full p-2.5"
+          type="email"
+          id="email"
+          aria-label="email"
+          required
+        />
+      </div>
+      <div class="">
+        <label class="block text-sm" for="cpf">Cpf</label>
+        <input
+          formControlName="cpf"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="cpf"
+          aria-label="cpf"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="telefone">Telefone</label>
+        <input
+          formControlName="telefone"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="telefone"
+          aria-label="telefone"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="data_de_nascimento">Data de nascimento</label>
+        <input
+          formControlName="data_de_nascimento"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="data_de_nascimento"
+          aria-label="data_de_nascimento"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="rua">Rua</label>
+        <input
+          formControlName="rua"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="rua"
+          aria-label="rua"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="numero">Número</label>
+        <input
+          formControlName="numero"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="numero"
+          aria-label="numero"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="complemento">Complemento</label>
+        <input
+          formControlName="complemento"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="complemento"
+          aria-label="complemento"
+          required
+        />
+      </div>
+
+
+      <div class="">
+        <label class="block text-sm" for="cep">Cep</label>
+        <input
+          formControlName="cep"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="cep"
+          aria-label="cep"
+          required
+        />
+      </div>
+
+
+      <div class="">
+        <label class="block text-sm" for="bairro">Bairro</label>
+        <input
+          formControlName="bairro"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="bairro"
+          aria-label="bairro"
+          required
+        />
+      </div>
+
+
+      <div class="">
+        <label class="block text-sm" for="cidade">Cidade</label>
+        <input
+          formControlName="cidade"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="cidade"
+          aria-label="cidade"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="cidade">Estado</label>
+        <input
+          formControlName="estado"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="estado"
+          aria-label="estado"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="nome_responsavel">Nome do responsável</label>
+        <input
+          formControlName="nome_responsavel"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="nome_responsavel"
+          aria-label="nome_responsavel"
+          required
+        />
+      </div>
+
+
+      <div class="">
+        <label class="block text-sm" for="email_responsavel">Email do responsável</label>
+        <input
+          formControlName="email_responsavel"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="email_responsavel"
+          aria-label="email_responsavel"
+          required
+        />
+      </div>
+
+
+      <div class="">
+        <label class="block text-sm" for="celular_responsavel">Celular do responsável</label>
+        <input
+          formControlName="celular_responsavel"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="celular_responsavel"
+          aria-label="celular_responsavel"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="created">Criado</label>
+        <input
+          formControlName="created"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="created"
+          aria-label="created"
+          required
+        />
+      </div>
+
+      <div class="">
+        <label class="block text-sm" for="updated">Modificado</label>
+        <input
+          formControlName="updated"
+          class="default-input w-full p-2.5"
+          type="text"
+          id="updated"
+          aria-label="updated"
+          required
+        />
+      </div>
+
+      <div class="flex justify-between pt-3">
+        <app-button-green
+          [value]="Voltar"
+          (click)="return()"
+        ></app-button-green>
+        <app-button-yellow
+          *ngIf="(permissionService.edit$ | async) === true"
+          [value]="Editar"
+          (click)="getEdit()"
+        ></app-button-yellow>
+      </div>
+    </form>
+  </div>
+</div>
